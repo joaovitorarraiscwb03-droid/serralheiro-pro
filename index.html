@@ -35,67 +35,6 @@
       content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7cd2831-d7c0-4998-a2d7-edcd41a79ead/id-preview-5e7f38e8--4bfc34d1-e5c8-44fd-90c6-88c14fec20ea.lovable.app-1778018722207.png"
     />
 
-    <!-- Checkout V4 -->
-    <script>
-      window.SERRALHEIRO_PRO_CHECKOUT_URL =
-        "https://ggcheckout.app/checkout/v4/kuEX7imkNPeRnDU5Cv2M";
-
-      (function () {
-        const CHECKOUT_V4 =
-          "https://ggcheckout.app/checkout/v4/kuEX7imkNPeRnDU5Cv2M";
-
-        function updateCheckoutLinks() {
-          const elements = document.querySelectorAll("a[href]");
-
-          elements.forEach(function (element) {
-            const href = element.getAttribute("href") || "";
-
-            if (
-              href.includes("ggcheckout.app/checkout") ||
-              href.includes("kuEX7imkNPeRnDU5Cv2M")
-            ) {
-              element.setAttribute("href", CHECKOUT_V4);
-            }
-          });
-        }
-
-        document.addEventListener(
-          "click",
-          function (event) {
-            const target = event.target.closest("a");
-
-            if (!target) return;
-
-            const href = target.getAttribute("href") || "";
-
-            if (
-              href.includes("ggcheckout.app/checkout") ||
-              href.includes("kuEX7imkNPeRnDU5Cv2M")
-            ) {
-              event.preventDefault();
-              window.location.href = CHECKOUT_V4;
-            }
-          },
-          true
-        );
-
-        window.addEventListener("load", updateCheckoutLinks);
-
-        const observer = new MutationObserver(updateCheckoutLinks);
-
-        document.addEventListener("DOMContentLoaded", function () {
-          updateCheckoutLinks();
-
-          observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-            attributes: true,
-            attributeFilter: ["href"],
-          });
-        });
-      })();
-    </script>
-
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
@@ -126,7 +65,6 @@
   </head>
 
   <body>
-    <!-- Meta Pixel noscript -->
     <noscript>
       <img
         height="1"
