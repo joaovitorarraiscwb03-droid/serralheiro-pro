@@ -1,59 +1,141 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Serralheiro Pro offers a digital library of ready-made projects for metalworkers and fabricators.">
-    <meta name="author" content="Lovable" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    
-    
+    <title>Serralheiro Pro | Biblioteca de Projetos Prontos para Serralheiros</title>
+
+    <meta
+      name="description"
+      content="Acesse o Serralheiro Pro, uma biblioteca digital com mais de 900 projetos prontos para serralheiros consultarem modelos, apresentarem opções ao cliente e ganharem tempo nos orçamentos."
+    />
+
+    <meta name="author" content="Serralheiro Pro" />
+
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7cd2831-d7c0-4998-a2d7-edcd41a79ead/id-preview-5e7f38e8--4bfc34d1-e5c8-44fd-90c6-88c14fec20ea.lovable.app-1778018722207.png">
+    <meta property="og:title" content="Serralheiro Pro | Mais de 900 Projetos Prontos" />
+    <meta
+      property="og:description"
+      content="Biblioteca digital com projetos prontos para serralheiros, fabricantes e profissionais de estruturas metálicas consultarem modelos e orçarem com mais rapidez."
+    />
+    <meta
+      property="og:image"
+      content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7cd2831-d7c0-4998-a2d7-edcd41a79ead/id-preview-5e7f38e8--4bfc34d1-e5c8-44fd-90c6-88c14fec20ea.lovable.app-1778018722207.png"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7cd2831-d7c0-4998-a2d7-edcd41a79ead/id-preview-5e7f38e8--4bfc34d1-e5c8-44fd-90c6-88c14fec20ea.lovable.app-1778018722207.png">
-    <meta property="og:title" content="Lovable App">
-  <meta name="twitter:title" content="Lovable App">
-  <meta property="og:description" content="Serralheiro Pro offers a digital library of ready-made projects for metalworkers and fabricators.">
-  <meta name="twitter:description" content="Serralheiro Pro offers a digital library of ready-made projects for metalworkers and fabricators.">
+    <meta name="twitter:title" content="Serralheiro Pro | Mais de 900 Projetos Prontos" />
+    <meta
+      name="twitter:description"
+      content="Acesse uma biblioteca digital com projetos prontos para consulta, orçamento e apresentação ao cliente."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7cd2831-d7c0-4998-a2d7-edcd41a79ead/id-preview-5e7f38e8--4bfc34d1-e5c8-44fd-90c6-88c14fec20ea.lovable.app-1778018722207.png"
+    />
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1676826293668801');
-    fbq('track', 'PageView');
-  </script>
-  <!-- End Meta Pixel Code -->
+    <!-- Checkout V4 -->
+    <script>
+      window.SERRALHEIRO_PRO_CHECKOUT_URL =
+        "https://ggcheckout.app/checkout/v4/kuEX7imkNPeRnDU5Cv2M";
 
-  <!-- UTMify -->
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-  ></script>
-  <script type="module" crossorigin src="/assets/index-eJvnDnJ1.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Bia_6da6.css">
-</head>
+      (function () {
+        const CHECKOUT_V4 =
+          "https://ggcheckout.app/checkout/v4/kuEX7imkNPeRnDU5Cv2M";
+
+        function updateCheckoutLinks() {
+          const elements = document.querySelectorAll("a[href]");
+
+          elements.forEach(function (element) {
+            const href = element.getAttribute("href") || "";
+
+            if (
+              href.includes("ggcheckout.app/checkout") ||
+              href.includes("kuEX7imkNPeRnDU5Cv2M")
+            ) {
+              element.setAttribute("href", CHECKOUT_V4);
+            }
+          });
+        }
+
+        document.addEventListener(
+          "click",
+          function (event) {
+            const target = event.target.closest("a");
+
+            if (!target) return;
+
+            const href = target.getAttribute("href") || "";
+
+            if (
+              href.includes("ggcheckout.app/checkout") ||
+              href.includes("kuEX7imkNPeRnDU5Cv2M")
+            ) {
+              event.preventDefault();
+              window.location.href = CHECKOUT_V4;
+            }
+          },
+          true
+        );
+
+        window.addEventListener("load", updateCheckoutLinks);
+
+        const observer = new MutationObserver(updateCheckoutLinks);
+
+        document.addEventListener("DOMContentLoaded", function () {
+          updateCheckoutLinks();
+
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ["href"],
+          });
+        });
+      })();
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;
+      n.version='2.0';n.queue=[];t=b.createElement(e);
+      t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '1676826293668801');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <!-- UTMify -->
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+
+    <script type="module" crossorigin src="/assets/index-eJvnDnJ1.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Bia_6da6.css" />
+  </head>
 
   <body>
     <!-- Meta Pixel noscript -->
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1676826293668801&ev=PageView&noscript=1"
-    /></noscript>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1676826293668801&ev=PageView&noscript=1"
+      />
+    </noscript>
+
     <div id="root"></div>
   </body>
 </html>
